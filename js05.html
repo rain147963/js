@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var i=1;
+    var a = prompt("숫자를 입력하세요"); 
+    var x = prompt("몇 단까지 출력할까요?");
+    
+    while(i<10){
+        su = a;
+        while(su<=Number(x)){
+            document.write(su + " x " + i + " = ");
+            if((su * i)<10){
+                document.write("&nbsp"+(su*i));
+            }
+            else{
+                document.write((su*i));
+            }
+            document.write("&nbsp&nbsp&nbsp")
+            su++;
+        }
+        document.write("<br>");
+        i++;                 
+               
+    }
+
+    </script>
+
+</body>
+</html>
