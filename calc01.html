@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .input{
+        text-align: right;
+    }
+</style>
+<body>
+    <table border="1">
+        <tr>
+            <td colspan="4"><input type="text" id="inputsub"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="text" id="inputmain" class="input" ></td>
+        </tr>
+        <tr>
+            <td><button id="btn_seven">7</button></td>
+            <td><button id="btn_eight">8</button></td>
+            <td><button id="btn_nine">9</button></td>
+            <td><button id="btn_mul">x</button></td>
+        </tr>
+        <tr>
+            <td><button id="btn_four">4</button></td>
+            <td><button id="btn_five">5</button></td>
+            <td><button id="btn_sic">6</button></td>
+            <td><button id="btn_minus">-</button></td>
+        </tr>
+        <tr>
+            <td><button id="btn_one">1</button></td>
+            <td><button id="btn_two">2</button></td>
+            <td><button id="btn_three">3</button></td>
+            <td><button id="btn_plus">+</button></td>
+        </tr>
+        <tr>
+            <td><button id="btn_clear">C</button></td>
+            <td><button id="btn_zero">0</button></td>
+            <td><button id="btn_dot">.</button></td>
+            <td><button id="btn_equal">=</button></td>
+        </tr>
+    </table>
+    <script>
+        const input = document.getElementById("inputmain");
+        const inputsub = document.getElementById("inputsub");
+        document.getElementById("btn_one").addEventListener('click',on1);
+        document.getElementById("btn_two").addEventListener('click',on2);
+        document.getElementById("btn_three").addEventListener('click',on3);
+        document.getElementById("btn_plus").addEventListener('click',onplus);
+        document.getElementById("btn_minus").addEventListener('click',onminus);
+        document.getElementById("btn_clear").addEventListener('click',onclear);
+        document.getElementById("btn_equal").addEventListener('click',onequal);
+        ar=[];
+        chk = false;
+        function on1(){
+            if(chk){
+                inputsub.value='';
+                chk = false;
+            }
+            ar.push(1);
+            input.value = ar.join("");
+        }
+        function on2(){
+            if(chk){
+                inputsub.value='';
+                chk = false;
+            }
+            ar.push(2);
+            input.value = ar.join("");
+        }
+        function on3(){
+            if(chk){
+                inputsub.value='';
+                chk = false;
+            }
+            ar.push(3);
+            input.value = ar.join("");
+        }
+        function onclear(){
+            input.value = '';
+            inputsub.value = '';
+        }
+        function onplus(){
+            ar=[];
+            sum = inputsub.value + input.value;
+            inputsub.value = eval(sum) + '+';
+            input.value = eval(sum);
+        }
+        function onminus(){
+            ar=[];
+            sum = inputsub.value + input.value;
+            inputsub.value = eval(sum) + '-';
+            input.value = eval(sum);
+        }
+        function onequal(){
+            ar=[];
+            sum = inputsub.value + input.value;
+            inputsub.value = inputsub.value + input.value + '=';
+            input.value = eval(sum);
+            chk = true;
+        }
+    </script>
+</body>
+</html>
