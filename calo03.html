@@ -13,11 +13,12 @@
 <body>
     <table border="1">
         <tr>
-            <td colspan="4"><input type="text" id="inputsub" class="input" ></td>
+            <td colspan="4"><input type="text" id="inputsub"></td>
         </tr>
         <tr>
             <td colspan="4"><input type="text" id="inputmain" class="input" ></td>
         </tr>
+        
         <tr>
             <td><button id="btn_seven">7</button></td>
             <td><button id="btn_eight">8</button></td>
@@ -39,7 +40,7 @@
         <tr>
             <td><button id="btn_clear">C</button></td>
             <td><button id="btn_zero">0</button></td>
-            <td><button id="btn_back">←</button></td>
+            <td><button id="btn_dot">.</button></td>
             <td><button id="btn_equal">=</button></td>
         </tr>
     </table>
@@ -53,17 +54,11 @@
         document.getElementById("btn_minus").addEventListener('click',onminus);
         document.getElementById("btn_clear").addEventListener('click',onclear);
         document.getElementById("btn_equal").addEventListener('click',onequal);
-        document.getElementById("btn_dot").addEventListener('click',ondot);
-        document.getElementById("btn_mul").addEventListener('click',onmul);
-        document.getElementById("btn_four").addEventListener('click',on4);
-        document.getElementById("btn_five").addEventListener('click',on5);
-        document.getElementById("btn_sic").addEventListener('click',on6);
-        document.getElementById("btn_seven").addEventListener('click',on7);
-        document.getElementById("btn_eight").addEventListener('click',on8);
-        document.getElementById("btn_nine").addEventListener('click',on9);
-        document.getElementById("btn_zero").addEventListener('click',on0);
         ar=[];
         chk = false;
+        input.addEventListener('input', formatNumber);
+        
+        
         function on1(){
             if(chk){
                 inputsub.value='';
@@ -71,6 +66,7 @@
             }
             ar.push(1);
             input.value = ar.join("");
+            formatNumber();
         }
         function on2(){
             if(chk){
@@ -79,6 +75,7 @@
             }
             ar.push(2);
             input.value = ar.join("");
+            formatNumber();
         }
         function on3(){
             if(chk){
@@ -87,72 +84,7 @@
             }
             ar.push(3);
             input.value = ar.join("");
-        }
-        function on4(){
-            if(chk){
-                inputsub.value='';
-                chk = false;
-            }
-            ar.push(4);
-            input.value = ar.join("");
-        }
-        function on5(){
-            if(chk){
-                inputsub.value='';
-                chk = false;
-            }
-            ar.push(5);
-            input.value = ar.join("");
-        }
-        function on6(){
-            if(chk){
-                inputsub.value='';
-                chk = false;
-            }
-            ar.push(6);
-            input.value = ar.join("");
-        }
-        function on7(){
-            if(chk){
-                inputsub.value='';
-                chk = false;
-            }
-            ar.push(7);
-            input.value = ar.join("");
-        }
-        function on8(){
-            if(chk){
-                inputsub.value='';
-                chk = false;
-            }
-            ar.push(8);
-            input.value = ar.join("");
-        }
-        function on9(){
-            if(chk){
-                inputsub.value='';
-                chk = false;
-            }
-            ar.push(9);
-            input.value = ar.join("");
-        }
-        function on0(){
-            if(chk){
-                inputsub.value='';
-                chk = false;
-            }
-            ar.push(0);
-            input.value = ar.join("");
-        }
-        function mul(){
-            ar=[];
-            sum = inputsub.value + input.value;
-            inputsub.value = eval(sum) + 'x';
-            input.value = eval(sum);   
-        }
-        function onback(){
-            ar.splice(ar.length-1,1);
-            input.value=ar.join('');   
+            formatNumber();
         }
         function onclear(){
             input.value = '';
@@ -163,21 +95,22 @@
             sum = inputsub.value + input.value;
             inputsub.value = eval(sum) + '+';
             input.value = eval(sum);
+           
         }
         function onminus(){
             ar=[];
             sum = inputsub.value + input.value;
             inputsub.value = eval(sum) + '-';
             input.value = eval(sum);
+            
         }
         function onequal(){
             ar=[];
             sum = inputsub.value + input.value;
             inputsub.value = inputsub.value + input.value + '=';
-            com = eval(sum);
-            comma = toLocaleString('ko-KR')
-            input.value = comma;
+            input.value = eval(sum);
             chk = true;
+            
         }
     </script>
 </body>

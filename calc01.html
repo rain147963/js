@@ -5,103 +5,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    .input{
-        text-align: right;
-    }
-</style>
 <body>
-    <table border="1">
+    <style>
+        
+        .bt{
+            background-color: rgb(89, 205, 223);
+            width: 60px;
+            height: 60px; 
+            font-size: 40px;
+           
+        }
+        .bt:hover{
+            background-color: rgb(213, 47, 105);
+        }
+        .bt1{
+            background-color: rgb(91, 230, 213);
+            width: 60px;
+            height: 130px; 
+            font-size: 40px;
+            border-radius: 30px;
+        }
+        .bt2{
+            background-color: rgb(91, 230, 213);
+            width: 60px;
+            height: 60px; 
+            font-size: 40px;
+            border-radius: 30px;
+           
+        }
+        .in{
+            width: 260px;
+            height: 60px;     
+            font-size: 40px;
+            border-radius: 30px;         
+        }
+        .tb{
+            background-image: url("123.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        
+    </style>
+    <table border="3" rules="double" class="tb">
+        
         <tr>
-            <td colspan="4"><input type="text" id="inputsub"></td>
+            <td colspan="4"><input type="text" id="input" class="in"></td>
+        </tr>
+        
+        <tr>
+            <td><button id="div" class="bt2">/</button></td>
+            <td><button id="mul" class="bt2">*</button></td>
+            <td><button id="minus" class="bt2">-</button></td> 
+            <td rowspan="2"><button id="plus" class="bt1" >+</button></td>          
         </tr>
         <tr>
-            <td colspan="4"><input type="text" id="inputmain" class="input" ></td>
+            <td><button id="seven" class="bt">7</button></td>
+            <td><button id="eight" class="bt">8</button></td>
+            <td><button id="nine" class="bt">9</button></td>
+            
         </tr>
         <tr>
-            <td><button id="btn_seven">7</button></td>
-            <td><button id="btn_eight">8</button></td>
-            <td><button id="btn_nine">9</button></td>
-            <td><button id="btn_mul">x</button></td>
+            <td><button id="four" class="bt">4</button></td>
+            <td><button id="five" class="bt">5</button></td>
+            <td><button id="six" class="bt">6</button></td>  
+            <td rowspan="2"><button id="enter" class="bt1">=</button></td>          
         </tr>
         <tr>
-            <td><button id="btn_four">4</button></td>
-            <td><button id="btn_five">5</button></td>
-            <td><button id="btn_sic">6</button></td>
-            <td><button id="btn_minus">-</button></td>
+            <td><button id="one" class="bt">1</button></td>
+            <td><button id="two" class="bt">2</button></td>
+            <td><button id="three" class="bt">3</button></td>            
         </tr>
         <tr>
-            <td><button id="btn_one">1</button></td>
-            <td><button id="btn_two">2</button></td>
-            <td><button id="btn_three">3</button></td>
-            <td><button id="btn_plus">+</button></td>
-        </tr>
-        <tr>
-            <td><button id="btn_clear">C</button></td>
-            <td><button id="btn_zero">0</button></td>
-            <td><button id="btn_dot">.</button></td>
-            <td><button id="btn_equal">=</button></td>
+            <td><button id="reset" class="bt">C</button></td>
+            <td><button id="zero" class="bt"><img src="curumi.png" withd="70" height="50"></button></td>
+            <td><button id="back" class="bt">←</button></td> 
+            <td><button id="comma" class="bt2">.</button></td> 
+                         
         </tr>
     </table>
     <script>
-        const input = document.getElementById("inputmain");
-        const inputsub = document.getElementById("inputsub");
-        document.getElementById("btn_one").addEventListener('click',on1);
-        document.getElementById("btn_two").addEventListener('click',on2);
-        document.getElementById("btn_three").addEventListener('click',on3);
-        document.getElementById("btn_plus").addEventListener('click',onplus);
-        document.getElementById("btn_minus").addEventListener('click',onminus);
-        document.getElementById("btn_clear").addEventListener('click',onclear);
-        document.getElementById("btn_equal").addEventListener('click',onequal);
+        const input = document.getElementById("input");
+        document.getElementById("zero").addEventListener('click',on0);
+        document.getElementById("one").addEventListener('click',on1);
+        document.getElementById("two").addEventListener('click',on2);
+        document.getElementById("three").addEventListener('click',on3);
+        document.getElementById("four").addEventListener('click',on4);
+        document.getElementById("five").addEventListener('click',on5);
+        document.getElementById("six").addEventListener('click',on6);
+        document.getElementById("seven").addEventListener('click',on7);
+        document.getElementById("eight").addEventListener('click',on8);
+        document.getElementById("nine").addEventListener('click',on9);
+        document.getElementById("plus").addEventListener('click',onplus);
+        document.getElementById("minus").addEventListener('click',onminus);
+        document.getElementById("enter").addEventListener('click',enter);
+        document.getElementById("reset").addEventListener('click',reset);
+        document.getElementById("back").addEventListener('click',onback);
+        document.getElementById("div").addEventListener('click',ondiv);
+        document.getElementById("mul").addEventListener('click',onmul);
+        document.getElementById("comma").addEventListener('click',oncomma);
         ar=[];
-        chk = false;
         function on1(){
-            if(chk){
-                inputsub.value='';
-                chk = false;
-            }
-            ar.push(1);
-            input.value = ar.join("");
+            ar.push(1)
+            input.value = ar.join("");       
         }
         function on2(){
-            if(chk){
-                inputsub.value='';
-                chk = false;
-            }
-            ar.push(2);
+            ar.push(2)
             input.value = ar.join("");
         }
         function on3(){
-            if(chk){
-                inputsub.value='';
-                chk = false;
-            }
-            ar.push(3);
+            ar.push(3)
             input.value = ar.join("");
         }
-        function onclear(){
+        function on4(){
+            ar.push(4)
+            input.value = ar.join("");
+        }
+        function on5(){
+            ar.push(5)
+            input.value = ar.join("");
+        }
+        function on6(){
+            ar.push(6)
+            input.value = ar.join("");
+        }
+        function on7(){
+            ar.push(7)
+            input.value = ar.join("");
+        }
+        function on8(){
+            ar.push(8)
+            input.value = ar.join("");
+        }
+        function on9(){
+            ar.push(9)
+            input.value = ar.join("");
+        }
+        function on0(){
+            ar.push(0)
+            input.value = ar.join("");
+        }
+        function reset(){
+            ar=[];
             input.value = '';
-            inputsub.value = '';
+        }
+        function onback(){
+            ar.splice(ar.length-1,1);
+            input.value=ar.join('');                               
         }
         function onplus(){
-            ar=[];
-            sum = inputsub.value + input.value;
-            inputsub.value = eval(sum) + '+';
-            input.value = eval(sum);
+            ar.push('+')
+            input.value = ar.join("");
         }
         function onminus(){
-            ar=[];
-            sum = inputsub.value + input.value;
-            inputsub.value = eval(sum) + '-';
-            input.value = eval(sum);
+            ar.push('-')
+            input.value = ar.join("");
         }
-        function onequal(){
-            ar=[];
-            sum = inputsub.value + input.value;
-            inputsub.value = inputsub.value + input.value + '=';
-            input.value = eval(sum);
-            chk = true;
+        function ondiv(){
+            ar.push('/')
+            input.value = ar.join("");
         }
-    </script>
+        function onmul(){
+            ar.push('*')
+            input.value = ar.join("");
+        }
+        function oncomma(){
+            ar.push('.')
+            input.value = ar.join("");
+        }
+        function enter(){
+            var sum = ar.join("");
+            input.value = eval(sum);
+            ar=[];
+        }
+
+    </script>    
 </body>
 </html>

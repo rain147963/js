@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .inputbox{
+        width: 60px;
+        height: 60px;
+        font-size: 50px;
+        text-align: center;
+    }
+    .tb{
+        background-image: url("123.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .bt1{
+            background-color: rgb(174, 225, 238);
+            width: 40px;
+            height: 40px; 
+            font-size: 35px;            
+            border-radius: 10px; 
+           
+    }
+    .bt2{
+            background-color: rgb(142, 202, 216);
+            width: 120px;
+            height: 60px; 
+            font-size: 30px;
+            color: rgb(253, 253, 253);
+            border-radius: 50px; 
+           
+    }
+    .bt3{
+            background-color: rgb(255, 255, 255);
+            width: 700px;
+            height: 60px; 
+            font-size: 30px;           
+            border-radius: 50px; 
+           
+    }
+    
+</style>
+<body>
+    <table border="1" rules="double" class="tb" >
+        <tr>
+            <br>
+            <td align="center" colspan="5"><button id="btn_set_clear" class="bt3" ><img src="ED.png" img width="430px"  ></button></td>
+            <br><br>
+        </tr>
+        <tr>
+            <td align="center"><img src="ame.png" width="150" height="200"><br>
+                아메리카노<br>
+                <button id = 'ameminus' class="bt1">-</button>&nbsp;<input type="text" id ='ameinput' class="inputbox">
+                <button id="ameplus" class="bt1">+</button></td>
+            <td align="center"><img src="ccafu.png" width="150" height="200"><br>
+                카푸치노<br>
+                <button id = 'ccafuminus' class="bt1">-</button>&nbsp;<input type="text" id = 'ccafuinput' class="inputbox">
+                <button id = 'ccafuplus' class="bt1">+</button></td>
+            <td align="center"><img src="ccama.png" width="150" height="200"><br>
+                카라멜 마끼야또<br>
+                <button id = 'ccamaminus' class="bt1">-</button>&nbsp;<input type="text" id = 'ccamainput' class="inputbox">
+                <button id = 'ccamaplus' class="bt1">+</button></td>
+            <td align="center"><img src="ccamo.png" width="150" height="200"><br>
+                카페모카<br>
+                <button id = 'ccamominus' class="bt1">-</button>&nbsp;<input type="text" id = 'ccamoinput' class="inputbox">
+                <button id = 'ccamoplus' class="bt1">+</button></td>
+            <td align="center"><img src="ccara.png" width="150" height="200"><br>
+                바닐라라떼<br>
+                <button id = 'ccaraminus' class="bt1">-</button>&nbsp;<input type="text" id = 'ccarainput'class="inputbox">
+                <button id = 'ccaraplus' class="bt1">+</button></td>
+        <tr>  
+            <td align="center"><img src="cconpa.png" width="150" height="200"><br>
+                에스프레소 콘파냐<br>
+                <button id = 'cconpaminus' class="bt1">-</button>&nbsp;<input type="text" id = 'cconpainput' class="inputbox">
+                <button id = 'cconpaplus' class="bt1">+</button></td>
+            <td align="center"><img src="bluemoon.png" width="150" height="200"><br>
+                블루문 에이드<br>
+                <button id = 'bluemoonminus' class="bt1">-</button>&nbsp;<input type="text" id = 'bluemooninput' class="inputbox">
+                <button id = 'bluemoonplus' class="bt1">+</button></td>
+            <td align="center"><img src="chocos.png" width="150" height="200"><br>
+                더블 초코칩 쉐이크<br>
+                <button id = 'chocosminus' class="bt1">-</button>&nbsp;<input type="text" id = 'chocosinput' class="inputbox">
+                <button id = 'chocosplus' class="bt1">+</button></td>
+            <td align="center"><img src="stro.png" width="150" height="200"><br>
+                마이멜로디 딸기 플랫치노<br>
+                <button id = 'strominus' class="bt1">-</button>&nbsp;<input type="text" id = 'stroinput' class="inputbox">
+                <button id = 'stroplus' class="bt1">+</button></td>
+            <td align="center"><img src="mango.png" width="150" height="200"><br>
+                쿠로미 망고 피치 에이드<br>
+                <button id = 'mangominus' class="bt1">-</button>&nbsp;<input type="text" id = 'mangoinput' class="inputbox">
+                <button id = 'mangoplus' class="bt1">+</button></td>
+            
+        </tr>
+        <tr>
+            <td align="center" colspan="2"><button id="btn_set_clear" class="bt2">초기화</button></td>
+            <td></td>
+            <td align="center" colspan="2"><button id="btn_total_commit" class="bt2">계산</button></td>
+        </tr>
+    </table>
+    <script>
+        ame_input = document.getElementById("ameinput"); //아메리카노
+        ame_input.value = 0;
+        document.getElementById("ameplus").addEventListener('click',on_ameplus);
+        document.getElementById("ameminus").addEventListener('click',on_ameminus);
+        document.getElementById("btn_total_commit").addEventListener('click',on_btn_total_commit);
+        document.getElementById("btn_set_clear").addEventListener('click',on_btn_set_clear);
+        function on_ameplus(){
+            ame_input.value++;
+        }
+        function on_ameminus(){
+            if(ame_input.value>0){
+                ame_input.value--;
+            }            
+        }         
+        ccafu_input = document.getElementById("ccafuinput"); //카푸치노
+        ccafu_input.value = 0;
+        document.getElementById("ccafuplus").addEventListener('click',on_ccafuplus);
+        document.getElementById("ccafuminus").addEventListener('click',on_ccafuminus);        
+        function on_ccafuplus(){
+            ccafu_input.value++;
+        }
+        function on_ccafuminus(){
+            if(ccafu_input.value>0){
+                ccafu_input.value--;
+            }            
+        }
+        ccama_input = document.getElementById("ccamainput"); //마끼야또
+        ccama_input.value = 0;
+        document.getElementById("ccamaplus").addEventListener('click',on_ccamaplus);
+        document.getElementById("ccamaminus").addEventListener('click',on_ccamaminus);
+        function on_ccamaplus(){
+            ccama_input.value++;
+        }
+        function on_ccamaminus(){
+            if(ccama_input.value>0){
+                ccama_input.value--;
+            }            
+        }
+        ccamo_input = document.getElementById("ccamoinput"); //카페모카
+        ccamo_input.value = 0;
+        document.getElementById("ccamoplus").addEventListener('click',on_ccamoplus);
+        document.getElementById("ccamominus").addEventListener('click',on_ccamominus);
+        function on_ccamoplus(){
+            ccamo_input.value++;
+        }
+        function on_ccamominus(){
+            if(ccamo_input.value>0){
+                ccamo_input.value--;
+            }            
+        }
+        ccara_input = document.getElementById("ccarainput"); //바닐라라떼
+        ccara_input.value = 0;
+        document.getElementById("ccaraplus").addEventListener('click',on_ccaraplus);
+        document.getElementById("ccaraminus").addEventListener('click',on_ccaraminus);
+        function on_ccaraplus(){
+            ccara_input.value++;
+        }
+        function on_ccaraminus(){
+            if(ccara_input.value>0){
+                ccara_input.value--;
+            }            
+        }
+        cconpa_input = document.getElementById("cconpainput"); //콘파냐
+        cconpa_input.value = 0;
+        document.getElementById("cconpaplus").addEventListener('click',on_cconpaplus);
+        document.getElementById("cconpaminus").addEventListener('click',on_cconpaminus);
+        function on_cconpaplus(){
+            cconpa_input.value++;
+        }
+        function on_cconpaminus(){
+            if(cconpa_input.value>0){
+                cconpa_input.value--;
+            }            
+        }
+        bluemoon_input = document.getElementById("bluemooninput"); //블루문
+        bluemoon_input.value = 0;
+        document.getElementById("bluemoonplus").addEventListener('click',on_bluemoonplus);
+        document.getElementById("bluemoonminus").addEventListener('click',on_bluemoonminus);
+        function on_bluemoonplus(){
+            bluemoon_input.value++;
+        }
+        function on_bluemoonminus(){
+            if(bluemoon_input.value>0){
+                bluemoon_input.value--;
+            }            
+        }
+        chocos_input = document.getElementById("chocosinput"); //초코
+        chocos_input.value = 0;
+        document.getElementById("chocosplus").addEventListener('click',on_chocosplus);
+        document.getElementById("chocosminus").addEventListener('click',on_chocosminus);
+        function on_chocosplus(){
+            chocos_input.value++;
+        }
+        function on_chocosminus(){
+            if(chocos_input.value>0){
+                chocos_input.value--;
+            }            
+        }
+        stro_input = document.getElementById("stroinput"); //딸기
+        stro_input.value = 0;
+        document.getElementById("stroplus").addEventListener('click',on_stroplus);
+        document.getElementById("strominus").addEventListener('click',on_strominus);
+        function on_stroplus(){
+            stro_input.value++;
+        }
+        function on_strominus(){
+            if(stro_input.value>0){
+                stro_input.value--;
+            }            
+        }
+        mango_input = document.getElementById("mangoinput"); //망고
+        mango_input.value = 0;
+        document.getElementById("mangoplus").addEventListener('click',on_mangoplus);
+        document.getElementById("mangominus").addEventListener('click',on_mangominus);
+        function on_mangoplus(){
+            mango_input.value++;
+        }
+        function on_mangominus(){
+            if(mango_input.value>0){
+                mango_input.value--;
+            }            
+        }
+        //토탈
+        function on_btn_total_commit(){
+            sum = (3200 * ame_input.value)+(4200 * ccafu_input.value)+(5700 * ccama_input.value)
+            +(4500 * ccamo_input.value)+(4500 * ccara_input.value)+(5000 * cconpa_input.value)
+            +(3500 * bluemoon_input.value)+(4800 * chocos_input.value)+(4000 * stro_input.value)
+            +(4000 * mango_input.value);
+            comma = sum.toLocaleString('ko-KR');
+            alert("총 가격은 "+comma+"원 입니다.");
+            ame_input.value='0';
+            ccafu_input.value='0';
+            ccama_input.value='0';
+            ccamo_input.value='0';
+            ccara_input.value='0';
+            cconpa_input.value='0';
+            bluemoon_input.value='0';
+            chocos_input.value='0';
+            stro_input.value='0';
+            mango_input.value='0';
+
+        }
+        function on_btn_set_clear(){
+            location.reload();
+        }
+    </script>
+</body>
+</html>
