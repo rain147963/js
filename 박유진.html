@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>프로젝트</title>
+  <style>
+  #topMenu {
+            height: 30px; 
+            width: 850px;
+    }
+    #topMenu ul {         
+        list-style-type: none;
+        margin: 0px;          
+        padding: 0px;          
+    }
+    #topMenu ul li {       
+        color: white;              
+        background-color: #2d2d2d; 
+        float: left;               
+        line-height: 30px;        
+        vertical-align: middle;   
+        text-align: center;  
+        position: relative;       
+    .menuLink, .submenuLink {   
+        text-decoration:none;       
+        display: block;           
+        width: 150px;             
+        font-size: 12px;                   
+        font-weight: bold;          
+        font-family: "Trebuchet MS", Dotum; 
+    }
+}
+    .menuLink { 
+        color: white;
+    }
+    .topMenuLi:hover .menuLink {
+        color: red;               
+        background-color: #4d4d4d; 
+    }
+    .submenuLink {
+        color: #2d2d2d;          
+        background-color: white;
+        border: solid 1px black;
+        margin-top: -1px;
+    }
+    .longLink {
+        width: 190px;
+    }
+    .submenu {
+        position: absolute;    
+        height: 0px;            
+        overflow: hidden;      
+        transition: height .2s; 
+        -webkit-transition: height .2s; 
+        -moz-transition: height .2s;
+        -o-transition: height .2s;
+    }
+    .topMenuLi:hover .submenu { 
+        height: 93px;          
+    }
+    .submenuLink:hover {        
+        color: red;         
+        background-color: #dddddd; 
+    }
+  </style>
+ </head>
+ <body>
+  <nav id = "middle"><h1>HOME</h1></nav>
+ <nav id = "right"> <h2>Login</h2></nav>
+  <form>
+ <nav id = "rigth"><p>아이디 : <input type = "text" name="text"> <input type = "button" value = "로그인"><br></p></nav>
+  <p>비밀번호 : <input type = "password" nmae="password">  <input type = "button" value= "ID/PW찾기"><br></p>
+  </form> 
+  <div id="topMenu" >
+      <ul>
+         <li class="topMenuLi">
+                <a class="menuLink">카테고리</a>
+                <ul class="submenu">
+                    <li><a class="submenuLink">제품1</a></li>
+                    <li><a class="submenuLink">제품2</a></li>
+                    <li><a class="submenuLink">제품3</a></li>
+                </ul>
+            </li>
+         <li>|</li>
+            <li class="topMenuLi">
+                <a class="menuLink">사업소개</a>
+            <ul class="submenu">
+            <li><a class="submenuLink">사업물품</a></li>
+            </ul>
+            </li>
+         <li>|</li>
+            <li class="topMenuLi">
+                <a class="menuLink">제품소개</a>
+                <ul class="submenu">
+                    <li><a class="submenuLink">제품구성</a></li>
+                    <li><a class="submenuLink">구매문의</a></li>
+                    <li><a class="submenuLink">구매예약</a></li>
+                </ul>
+            </li>
+         <li>|</li>
+            <li class="topMenuLi">
+                <a class="menuLink">회원정보</a>
+            <ul class="submenu">
+            <li><a class="submenuLink">정보수정</a></li>
+            <li><a class="submenuLink">구매 및 예약내역</a></li>
+            </ul>
+            </li>
+         <li>|</li>
+            <li class="topMenuLi">
+                <a class="menuLink">고객센터</a>
+            <ul class="submenu">
+            <li><a class="submenuLink">공지사항</a></li>
+            <li><a class="submenuLink">FAQ</a></li>
+            <li><a class="submenuLink">Q&A</a></li>
+            <li><a class="submenuLink">1:1문의</a></li>
+            </ul>
+            </li>
+      </ul>
+   </div>
+  </nav></ul>
+ </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <input type="text" id="input" autofocus>
+        <button>확인</button><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5 &nbsp;6 &nbsp;7 &nbsp;8 &nbsp;9 <br>
+        o&nbsp;<input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><br>
+        X&nbsp;<input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox">
+    </form>
+    <div id="logs" style="width: 400px; height: 400px; background-color: burlywood;"></div>
+    <script>
+        const $form = document.querySelector('#form');
+        const $input = document.querySelector('#input');
+        const $logs = document.querySelector('#logs');
+
+        var num=[1,2,3,4,5,6,7,8,9];
+        const answer=[];
+        for(var n=0;n<4;n++){
+            index = Math.floor(Math.random()*num.length);
+            answer.push(num[index]);
+            num.splice(index,1);
+        }
+        console.log(answer);
+        const ar=[];
+
+        function chk(instr){
+            if(instr.length !== 4){
+                return alert('숫자는 4자리로만 입력하세요');
+            }
+            if(new Set(instr).size !==4){
+                return alert('숫자는 중복되지 않게 입력하세요');
+            }
+            if(ar.includes(instr)){
+                return alert('이미 입력한 숫자 입니다.');
+            }    
+            return true;
+        }
+
+        $form.addEventListener('submit',(event)=>{
+            event.preventDefault(); //대기하라
+            const player = $input.value;
+            $input.value='';
+            if(!chk(player)){
+                return;
+            }
+            strike = 0;
+            ball = 0;
+            out = 0;
+            for(let i=0;i<answer.length;i++){
+                const juso = player.indexOf(answer[i]);
+                if(juso > -1){
+                    if(juso == i){
+                        strike++;
+                    }
+                    else{
+                        ball++;
+                    }
+                }
+                else{
+                    out++;
+                }
+            }
+            if(answer.join('')===player){
+                $logs.textContent='승리! 게임종료!';
+                return;
+            }
+            $logs.append(`${player} : ${strike}스트라이크 ${ball}볼 ${out}아웃`,document.createElement('br'));
+            ar.push(player);
+        });
+    </script>
+
+        
+    
+</body>
+</html>

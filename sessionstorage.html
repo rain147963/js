@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id = "shot"> 샷추가<br>
+    <input type="checkbox" id = "milk"> 우유추가<br>
+    <button id="set" onclick="test()">계산</button><br>
+    <input type="text" id="input">
+    <a href="session.html">이동</a>
+
+    <script>
+        function test(){
+            option1=0;
+            option2=0;
+            if(document.getElementById("shot").checked==true){
+                option1=1;
+            }
+            if(document.getElementById("milk").checked==true){
+                option2=1;
+            }
+            sum = 2000 + (option1*500 + option2*400);
+            input.value = sum;
+            var Americano_money = sum;
+            sessionStorage.setItem("Americano_money",Americano_money);
+        }
+
+    </script>
+    
+</body>
+</html>

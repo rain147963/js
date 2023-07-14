@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>계산기</h1>
+    <form id="form">
+        <input type="text" id="input1">
+        <input type="text" id="input2">
+        <input type="text" id="input3">
+    </form>
+    <button id="calc">계산</button>
+    <button id="quit">종료</button>
+    <div style="width: 300px;height: 300px; background-color: aqua;" id="logs"></div>
+    <script>
+        const $form = document.querySelector('#form');
+        const $input1 = document.querySelector('#input1');
+        const $input2 = document.querySelector('#input2');
+        const $input3 = document.querySelector('#input3');
+        const $logs = document.querySelector('#logs');
+        document.getElementById("calc").addEventListener('click',on_calc);
+        document.getElementById("quit").addEventListener('click',close_quit);
+        function close_quit(){
+            const exit = confirm("정말 종료하시겠습니까?");
+            if(exit === true){
+                window.close();
+            }
+        }
+
+        function on_calc(){
+            $logs.innerText='';
+            const one = $input1.value;
+            const buho = $input2.value;
+            const two = $input3.value;
+            var sum = 0;
+            if(buho == '+'){
+                sum = Number(one) + Number(two);
+            }
+            else{
+                sum = Number(one) - Number(two);
+            }
+            $logs.append(`${one} ${buho} ${two} = ${sum}`,document.createElement('br'));
+        }
+    </script>
+</body>
+</html>
