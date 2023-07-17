@@ -1,0 +1,236 @@
+:root {
+    --text-color: #f0f4f5;
+    --background-color: #263343;
+    --accent-color: #d49466;
+  }
+  body {
+    background-color: #eff1f3;
+    margin: 0;
+    font-family: "Source Sans Pro";
+  }
+*{
+    margin: 0;
+    padding: 0;
+}
+article{
+    height: 100%;
+    width: 1024px;
+    margin: 0 auto;
+    padding-bottom: 12px;
+}
+footer{
+    height: 200px;
+    background-color: darkseagreen;
+}
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 10px 12px;
+  }
+  
+  .shop__logo {
+    font-size: 50px;
+    color: var(--text-color);
+  }
+  
+  .navbar__logo i {
+    color: var(--accent-color);
+  }
+  
+  .navbar__menu {  
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .navbar__menu li {
+    padding: 8px 12px;
+  }
+  
+  .navbar__menu li:hover {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+  }
+  
+  .navbar__icons {
+    list-style: none;
+    color: var(--text-color);
+    display: flex;
+    padding-left: 0;
+  }
+  
+  .navbar__icons li {
+    padding: 8px 12px;
+  }
+  
+  .navbar__toggleBtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: var(--accent-color);
+  }
+  .middle__bar {
+    font-size: 25px;
+    color: var(--text-color);
+    width: center;
+  }
+  .middlebar {  
+    background-color: var(--background-color);
+    padding: 5px 5px;
+  }
+  .middle__menu { 
+    text-align: center;
+  }
+  
+  .middle__menu li {  
+    display: inline-block;
+    padding: 5px 5px;
+  }
+  
+  .middle__menu li:hover {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+  }
+#banner > img{
+    width: 100%;
+}
+#article > h1{
+    margin-top: 16px;
+}
+#product-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+.product-card{
+    width: 300px;
+    height: 150px;
+    margin-right:24px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 12px;
+}
+
+.product-img{
+    width: 100%;
+    height: 217px;
+}
+.product-contents{
+    display:flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.product-name{
+    font-size: 14px;
+}
+.product-price{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 2px;
+}
+.product-seller{
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    margin-right: 2px;
+}
+.product-avatar{
+    width: 24px;
+    margin-right: 2px;
+}
+  
+  
+  @media screen and (max-width: 50px) {
+    .shopvar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 8px 24px;
+    }
+    .navbar__menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+      header{
+        flex-direction: column;
+      }
+     
+    }
+  
+    .navbar__menu li {
+      width: 100%;
+      text-align: center;
+    }
+    
+  
+    .navbar__icons {
+      display: none;
+      justify-content: center;
+      width: 100%;
+    }
+  
+    .navbar__toggleBtn {
+      display: block;
+    }
+  
+    .navbar__menu.active,
+    .navbar__icons.active {
+      display: flex;
+    }
+  }  
+    
+    .navbar__toggleBtn {
+      display: none;
+      position: absolute;
+      right: 32px;
+      font-size: 24px;
+      color: var(--accent-color);
+    }
+    
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+      }
+      .navbar__menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+    
+      .navbar__menu li {
+        width: 100%;
+        text-align: center;
+      }
+    
+      .navbar__icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+      }
+    
+      .navbar__toggleBtn {
+        display: block;
+      }
+    
+      .navbar__menu.active,
+      .navbar__icons.active {
+        display: flex;
+      }
+    }  

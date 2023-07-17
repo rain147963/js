@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>쇼핑몰</title>
+  <style>
+    /* CSS 스타일링은 여기에 작성합니다. */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>쇼핑몰</h1>
+  </header>
+
+  <main>
+    <section id="products">
+      <h2>상품 목록</h2>
+      <div class="product">
+        <h3>상품 1</h3>
+        <p>가격: $10</p>
+        <button onclick="addToCart('상품 1')">장바구니에 추가</button>
+      </div>
+      <div class="product">
+        <h3>상품 2</h3>
+        <p>가격: $20</p>
+        <button onclick="addToCart('상품 2')">장바구니에 추가</button>
+      </div>
+      <!-- 나머지 상품들도 유사하게 추가합니다. -->
+    </section>
+
+    <section id="cart">
+      <h2>장바구니</h2>
+      <ul id="cart-items">
+        <!-- 장바구니에 추가한 상품들이 여기에 동적으로 추가됩니다. -->
+      </ul>
+      <p id="total">총 가격: $0</p>
+      <button onclick="checkout()">결제</button>
+    </section>
+  </main>
+
+  <script>
+    // JavaScript 로직은 여기에 작성합니다.
+    let cartItems = [];
+    let total = 0;
+
+    function addToCart(productName) {
+      cartItems.push(productName);
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartItemsElement = document.getElementById('cart-items');
+      cartItemsElement.innerHTML = '';
+
+      cartItems.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        cartItemsElement.appendChild(li);
+      });
+
+      updateTotal();
+    }
+
+    function updateTotal() {
+      total = calculateTotalPrice(cartItems);
+      const totalElement = document.getElementById('total');
+      totalElement.textContent = `총 가격: $${total}`;
+    }
+
+    function calculateTotalPrice(items) {
+      let totalPrice = 0;
+      // 상품 가격을 적절하게 계산하는 로직을 추가합니다.
+      // 예시로 각 상품 가격이 10인 경우에만 동작하도록 작성하였습니다.
+      items.forEach(item => {
+        if (item === '상품 1') {
+          totalPrice += 10;
+        } else if (item === '상품 2') {
+          totalPrice += 20;
+        }
+        // 나머지 상품들에 대한 가격 계산 로직을 추가합니다.
+      });
+
+      return totalPrice;
+    }
+
+    function checkout() {
+      // 결제 로직을 추가합니다.
+      alert(`결제가 완료되었습니다. 총 가격: $${total}`);
+      cartItems = [];
+      updateCart();
+    }
+  </script>
+</body>
+</html>
