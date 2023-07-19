@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css"> 
+    <title>Document</title>
+</head>
+<style>
+
+ 
+    div.create{
+    width: 800px;
+    text-align: center;
+    padding: 30px;
+    border-bottom: 1px solid black;
+    margin: auto;
+    }
+ 
+    table{
+    height: 300px;
+    width: 900px;
+    border-top: 3px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    }
+ 
+    td{
+    border-bottom: 1px dotted black;
+    }
+ 
+    caption{
+    text-align: left;
+    }
+ 
+    .col1 {
+    background-color: #e8e8e8;
+    padding: 10px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 0.8em;
+    }
+ 
+    .col2 {
+    text-align: left;
+    padding: 5px;
+    }
+ 
+    .but1 {
+    height: 25px;
+    width: 80px;
+    color: white;
+    background-color: black;
+    border-color: black;
+    }
+ 
+    .but2 {
+    height: 27px;
+    width: 120px;
+    color: white;
+    background-color: black;
+    border-color: black;
+    }
+ 
+    .but3 {
+    height: 35px;
+    width: 150px;
+    background-color: white;
+    border: 2px solid black;
+    }
+ 
+    .but4{
+    height: 35px;
+    width: 150px;
+    background-color: white;
+    border: 2px solid black;
+    }
+    
+    .but1:hover {
+    background-color: #b9b9b9;
+    color: black;
+    border: 2px solid black;
+    }
+ 
+    .but2:hover {
+    background-color: #b9b9b9;
+    color: black;
+    border: 2px solid black;
+    }
+ 
+    .but3:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    }
+ 
+    .but4:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    }
+    
+    p{
+    font-size: 0.7em;
+    }
+ 
+    .g{
+    font-size: 0.9em;
+    }
+ 
+    .c{
+    font-size: 0.9em;
+    }
+ 
+    .a{
+    font-size: 0.7em;
+    }
+    
+    .num{
+    color: red;
+    }
+    .year{
+    text-align: right;
+    width: 100px;
+    }
+    .blank {
+   
+    height: 200px;
+   
+   }
+  </style>
+</style>
+<body>
+    <script>
+       
+        function formCheck(form) {
+            //유효성 검사
+            if(form.name.value == "") {
+                alert('이름을 입력하세요.');
+                form.name.focus() ;
+                return ;
+            }
+            if(form.id.value == "") {
+                alert('아이디를 입력하세요.');
+                form.id.focus() ;
+                return ;
+            }
+            if(form.pwd.value == "") {
+                alert('비밀번호를 입력하세요.');
+                form.pwd.focus() ;
+                return ;
+            }
+            if(form.pwd.value.length < 10 || form.pwd.value.length > 16) {
+                alert('비밀번호는 10 ~ 16자 사이로 입력하세요.');
+                form.pwd.focus() ;
+                return ;
+            }
+            if(form.pwdCheck.value == "") {
+                alert('비밀번호 확인을 입력하세요.');
+                form.pwdCheck.focus() ;
+                return ;
+            }
+            if(form.mailid.value == "") {
+                alert('e-mail을 입력하세요.');
+                form.mailid.focus() ;
+                return ;
+            }
+            if(form.mailid.value == "") {
+                alert('e-mail을 입력하세요.');
+                form.mailid.focus() ;
+                return ;
+            }
+            if(form.email.value == "" && form.mailslc.selectedIndex == 0) {
+                alert('e-mail을 입력하세요.');
+                form.mailslc.focus() ;
+                return ;
+            }
+            if(form.grade.selectedIndex == 0) {
+                alert('출생년도을 선택하세요.');
+                form.grade.focus();
+                return;
+            }
+            if(form.cls.selectedIndex == 0) {
+                alert('출생 월을 선택하세요.');
+                form.grade.focus();
+                return;
+            }
+            alert('회원가입이 완료되었습니다.') ;
+     
+            form.reset();
+            }
+     
+      </script>
+
+      <header>
+        <div class="header">
+            <shop class="navbar">
+                <div class="shop__logo">
+                    <i class="fab fa-accusoft"></i>
+                    <i class="fa-solid fa-user"></i>
+                    <i class="shop__logo2"><a href="main.html"><img src="rogo2.png" width="75px"></a></i>                        
+                    <i class="shop_name"><a href="main.html">PET BOUTIQUE</a></i>
+                </div>
+              
+                <ul class="navbar__menu">
+                    <li><a href="local_in.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="cart.html">장바구니</a></li>
+                    <li><a href="qna.html">Q & A</a></li>                                                         
+                </ul>             
+                
+        
+                <a href="#" class="navbar__toggleBtn">
+                    <i class="fas fa-bars"></i>
+                </a>            
+            </nav>
+         </div>
+        </header>   
+    <section>  
+    <div class = blank> </div>  
+    <form method="post" action="">
+        <div class="container">
+      <div class="insert">
+      
+          <table>
+      <caption><h2>회원가입 양식</h2></caption>
+      <tr>
+          <td class="col1">이름</td>
+          <td class="col2"><input type="text" name="name" maxlength="5"></td>
+      </tr>
+      <tr>
+          <td class="col1">아이디</td>
+          <td class="col2">
+              <input type="text" name="id" maxlength="10">
+              <input class='but1' type="button" value="중복확인" onclick="">
+          </td>
+      </tr>
+      <tr>
+          <td class="col1">비밀번호</td>
+          <td class="col2">
+              <input type="password" name="pwd" maxlength="16">
+              <p>※비밀번호는 <span class="num">문자, 숫자, 특수문자(~!@#$%^&*)의 조합
+              10 ~ 16자리</span>로 입력이 가능합니다.</p>
+          </td>
+      </tr>
+      <tr>
+          <td class="col1">비밀번호 확인</td>
+          <td class="col2"><input type="password" name="pwdCheck" maxlength="16"></td>
+      </tr>
+      <tr>
+          <td class="col1">이메일</td>
+          <td class="col2">
+              <input type="text" name="mailid">
+              <span class="a">@</span>
+              <input type="text" name="email">
+              <select name="mailslc">
+                  <option value="self" selected>직접입력</option>
+                  <option value="naver">naver.com</option>
+                  <option value="gm">gmail.com</option>
+                  <option value="da">daum.com</option>
+                  
+              </select>
+              <input class='but2' type="button" value="이메일 중복확인" onclick="">
+          </td>
+      </tr>
+      <tr>
+        
+          <td class="col1">출생년도/월</td>
+          <td class="col2"><input type="text" name="Year" maxlength="4" class="year">
+          <span class="g">년</span>
+          
+          <select name="cls">
+            <option value="slc2" selected>선택</option>
+            <option value="c1">1</option>
+            <option value="c2">2</option>
+            <option value="c3">3</option>
+            <option value="c4">4</option>
+            <option value="c5">5</option>
+            <option value="c5">6</option>
+            <option value="c5">7</option>
+            <option value="c5">8</option>
+            <option value="c5">9</option>
+            <option value="c5">10</option>
+            <option value="c5">11</option>
+            <option value="c5">12</option>
+        </select>
+        
+   
+          <span class="c">월</span>
+
+      
+          
+          </td>
+   
+      </tr>
+      </table>
+      
+    </div>
+   
+    <div class="create">
+      
+          <input class="but3" type="button" value="가입취소" onclick="">
+          <input class="but4" type="button" value="회원가입" onclick="formCheck(this.form)">
+      
+    </div>
+    </div>
+    </form>
+    </section>  
+    <div class="endbar">
+        <nav class="end__bar">
+          <ul class="end__menu">
+             <li>
+                <div id='zz' class="zzfont">
+                고객센터 <br>                        
+                0507.1111.2345<br>  
+                <img src="call.PNG" width="70"><br>               
+                </div>
+            </li>
+            <li><br><img src="makde.png" width="3px"></li>
+            <li>
+            <div id='cc'>
+                [운영시간]<br><br>
+                평일 오전 10:00 ~ 오후 6:00<br><br>
+                점심시간 오후 12:00 ~ 오후 1:00<br><br>
+                토/일/공휴일 휴무<br>                    
+            </div>
+            </li>
+            <li><br><img src="makde.png" width="3px"></li>
+            <li>
+            <div id='pp'>                            
+                <br><a href="">NOTICE</a><br><br>
+               <a href="">Q & A</a><br><br>
+               <a href="">F A Q</a><br>
+            </div>
+            </li>
+            <li><br><img src="makde.png" width="3px"></li>
+            <li>
+            <div id='hh'>                            
+                <br>PET BOUTIQUE │대표 홍길동 │사업자등록번호 123-34-56789<br><br>
+                주소 │경기도 화성시 병점 1로 1길 11-1(병점동)<br><br>
+                통신판매업신고 2023-경기화성-0718<br>
+            </div>
+            </li>
+        </ul>
+      </nav>
+      </div>
+</body>
+</html>

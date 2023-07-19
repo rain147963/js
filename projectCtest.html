@@ -1,3 +1,4 @@
+<전체코드>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,6 @@
     max-height: 500px;
 
 }    
-
 </style>
 <body>
     <header>
@@ -27,7 +27,7 @@
             </div>
           
             <ul class="navbar__menu">
-                <li><a href="">Login</a></li>
+                <li><a href="Login.html">Login</a></li>
                 <li><a href="">Join</a></li>
                 <li><a href="">장바구니</a></li>
                 <li><a href="">FAQ</a></li>
@@ -41,49 +41,141 @@
     </header>
 
     <div class="top img">
-        <img class='main_img' src="baby.png">        
+        <img class='main_img' src="건1.png">        
     </div>
-
 
     <div class = "middlebar"> 
         <nav class="middle__bar">          
             <ul class="middle__menu">
-                <li><a href="#">사료</a></li>
-                <li><a href="#">이동장</a></li>
-                <li><a href="#">하우스</a></li>            
+                <li><a href="brand01.html">브랜드별사료</a></li>
+                <li><a href="brand02.html">이동장</a></li>
+                <li><a href="brand03.html">하우스</a></li>            
              </ul>
         </nav>
     </div>
-   
-    <article>
-    <h1> Bast 상품 </h1>
-    <div id="produc-list">   
-        <div class="product-card"></div>
-        <div class="product-card"></div>
-        <div class="product-card"></div>
-        <div class="product-card"></div>
-        <div class="product-card"></div>
+    <body>
+        <onclick="changeScreen()">
+        <script>
+            function changeScreen() {
+                window.location.href = "브랜드별사료";
+            }
+        </script>
 
-        <img class="" alt="베스트 이미지1"> 
-          상품명
-          가격
-        <img class="" alt="베스트 이미지2">
-        상품명
-        가격
-        <img class="" alt="베스트 이미지3">
-        상품명
-        가격
-        <img class="" alt="베스트 이미지3">
-        상품명
-        가격
-    </div>
-    </article>
-    
-    <div>
-    고객센터  // QNA(링크)   //회사이름 사업자명, 사업자번호
-    
-    </div>
 
+
+
+    <div> BEST 사료 </div><br>
+    <table border="0">             
+            <tr>
+                <td align="center"><img src="aa.png" width="120" height="150"><br>
+                    용도: 영개용 사료<br>
+                    가격 9000 원<br>
+                   
+                </td>   
+                <td align="center"><img src="coldb.png" width="120" height="150"><br>
+                    노인개 사료<br>
+                    가격 : 10000 원<br>
+                   
+                </td>
+                <td align="center"><img src="backsc.png" width="120" height="150"><br>
+                    체중조절 사료<br>
+                    가격 : 10000 원
+                    
+                </td>    
+                <td align="center"><img src="backcho.png" width="120" height="150"><br>
+                    당노조절 사료<br>
+                    가격 : 12000 원<br>
+                </td>                                              
+            </tr><br>
+    </table><br><br>
+
+
+    <div> BEST 이동장 </div><br>
+        <table border="0">             
+            <tr>
+                <td align="center"><img src="aa.png" width="120" height="150"><br>
+                    용도: 푸르미 이동장<br>
+                    가격 22000 원<br>
+                </td>                     
+
+                <td align="center"><img src="coldb.png" width="120" height="150"><br>
+                    닥터펫 핑크 이동장<br>
+                    가격 : 31500 원<br>
+                </td>
+                           
+                         
+                <td align="center"><img src="backsc.png" width="120" height="150"><br>
+                    푸르미 그린 이동장<br>
+                    가격 : 22000 원
+                </td>            
+                            
+                <td align="center"><img src="backcho.png" width="120" height="150"><br>
+                    아이맥 이동장<br>
+                    가격 : 12000 원<br>
+                </td>                                              
+            </tr>
+        </table><br><br>
+    
+    <div> BEST 장난감 </div>
+        <table border="0">             
+            <tr>
+                <td align="center"><img src="aa.png" width="120" height="150"><br>
+                    용도: 푸르미 이동장<br>
+                    가격 22000 원<br>
+                </td>                           
+                                           
+                <td align="center"><img src="coldb.png" width="120" height="150"><br>
+                    닥터펫 핑크 이동장<br>
+                    가격 : 31500 원<br>
+                </td>                           
+                                         
+                <td align="center"><img src="backsc.png" width="120" height="150"><br>
+                    푸르미 그린 이동장<br>
+                    가격 : 22000 원
+                </td>                            
+                                            
+                <td align="center"><img src="backcho.png" width="120" height="150"><br>
+                    아이맥 이동장<br>
+                    가격 : 12000 원<br>
+                </td>                                                  
+            </tr>                
+        </table> 
+                
+        <nav class="end__bar">
+            <ul class="end__menu">
+                <li>
+                    <div id='zz' class="zzfont">
+                        고객센터 <br>
+                        0507.1111.2345<br><br>                 
+                    </div>
+                </li>
+                <li>
+                    <div id='cc'>
+                        [운영시간]<br>
+                        평일 오전 10:00 ~ 오후 6:00<br>
+                        점심시간 오후 12:00 ~ 오후 1:00<br>
+                        토/일/공휴일 휴무<br>                    
+                    </div>
+                </li>
+                <li>
+                    <div id='pp'>                            
+                       <a href="">NOTICE</a><br>
+                       <a href="">Q & A</a><br>
+                       <a href="">F A Q</a><br>
+                    </div>
+                </li>
+                <li>
+                    <div id='hh'>                            
+                        PET BOUTIQUE │대표 홍길동 │사업자등록번호 123-34-56789<br>
+                        주소 │경기도 화성시 병점 1로 1길 11-1(병점동)<br>
+                        통신판매업신고 2023-경기화성-0718<br>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>              
+
+            
  <script>
     const toggleBtn = document.querySelector(".navbar__toggleBtn");
     const menu = document.querySelector(".navbar__menu");
@@ -94,6 +186,7 @@
     icons.classList.toggle("active");
     });
     </script>
+
     
 </body>
 </html>

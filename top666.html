@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shop1.css"> 
+    <title>PET BOUTIQUE</title>  
+</head>
+<style>
+.main_img{
+    width: auto;
+    height: auto;
+    max-width: 800px;
+    max-height: 500px;
+
+}    
+
+</style>
+<body>
+    <header>
+    <div class="header">
+        <shop class="navbar">
+            <div class="shop__logo">
+                <i class="fab fa-accusoft"></i>
+                <i class="fa-solid fa-user"></i>      
+                <a href="">PET BOUTIQUE</a>
+            </div>
+          
+            <ul class="navbar__menu">
+                <li><a href="">Login</a></li>
+                <li><a href="">Join</a></li>
+                <li><a href="">장바구니</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+    
+            <a href="#" class="navbar__toggleBtn">
+                <i class="fas fa-bars"></i>
+            </a>            
+        </nav>
+     </div>
+    </header>
+    <p>.</p>
+    <p>.</p>
+
+    
+        <body>
+            <div id="slideshow" >
+              <img src="2.PNG" alt="Image 1">
+              <img src="3.png" alt="Image 2">
+              <img src="4.png" alt="Image 3">
+              <div class="prevButton">&lt;</div>
+              <div class="nextButton">&gt;</div>
+            </div>
+          
+            <script>
+              var slideshow = document.getElementById('slideshow');
+              var images = slideshow.getElementsByTagName('img');
+              var prevButton = slideshow.querySelector('.prevButton');
+              var nextButton = slideshow.querySelector('.nextButton');
+              var currentIndex = 0;
+          
+              // 초기 이미지 표시
+              showImage(currentIndex);
+          
+              // 다음 이미지로 이동하는 함수
+              function nextImage() {
+                currentIndex++;
+                if (currentIndex >= images.length) {
+                  currentIndex = 0;
+                }
+                showImage(currentIndex);
+              }
+              
+              // 이전 이미지로 이동하는 함수
+              function prevImage() {
+                currentIndex--;
+                if (currentIndex < 0) {
+                  currentIndex = images.length - 1;
+                }
+                showImage(currentIndex);
+              }
+          
+              // 이미지를 표시하는 함수
+              function showImage(index) {
+                for (var i = 0; i < images.length; i++) {
+                  images[i].style.opacity = '0';
+                }
+                images[index].style.opacity = '1';
+              }
+          
+              // 자동으로 다음 이미지로 이동
+              setInterval(nextImage, 3000);
+              
+              // 오른쪽으로 이동하는 버튼에 이벤트 리스너 추가
+              nextButton.addEventListener('click', nextImage);
+          
+              // 왼쪽으로 이동하는 버튼에 이벤트 리스너 추가
+              prevButton.addEventListener('click', prevImage);
+            </script>
+          </body>       
+    
+
+
+    <div class = "middlebar"> 
+        <nav class="middle__bar">          
+            <ul class="middle__menu">
+                <li><a href="#">사료</a></li>
+                <li><a href="#">이동장</a></li>
+                <li><a href="#">하우스</a></li>            
+             </ul>
+        </nav>
+    </div>
+    <nav id="gnb">
+        
+                                   
+
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+
+    </div>
+   
+
+    <div> Bast 상품 </div>
+    <div>  //가로로 정렬, 많이 판매된 기준
+        <img class="" alt="베스트 이미지1"> 
+          상품명
+          가격
+        <img class="" alt="베스트 이미지2">
+        상품명
+        가격
+        <img class="" alt="베스트 이미지3">
+        상품명
+        가격
+        <img class="" alt="베스트 이미지3">
+        상품명
+        가격
+      </div>
+      <div class="endbar">
+        <nav class="end__bar">
+            <ul class="end__menu">
+                <li>
+                    <div id='zz' class="zzfont">
+                        고객센터 <br>
+                        0507.1111.2345<br><br>                 
+                    </div>
+                </li>
+                <li>
+                    <div id='cc'>
+                        [운영시간]<br>
+                        평일 오전 10:00 ~ 오후 6:00<br>
+                        점심시간 오후 12:00 ~ 오후 1:00<br>
+                        토/일/공휴일 휴무<br>                    
+                    </div>
+                </li>
+                <li>
+                    <div id='pp'>                            
+                       <a href="">NOTICE</a><br>
+                       <a href="">Q & A</a><br>
+                       <a href="">F A Q</a><br>
+                    </div>
+                </li>
+                <li>
+                    <div id='hh'>                            
+                        PET BOUTIQUE │대표 홍길동 │사업자등록번호 123-34-56789<br>
+                        주소 │경기도 화성시 병점 1로 1길 11-1(병점동)<br>
+                        통신판매업신고 2023-경기화성-0718<br>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>>
+
+ <script>
+    const toggleBtn = document.querySelector(".navbar__toggleBtn");
+    const menu = document.querySelector(".navbar__menu");
+    const icons = document.querySelector(".navbar__icons");
+
+    toggleBtn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    icons.classList.toggle("active");
+    });
+    </script>
+    
+</body>
+</html>

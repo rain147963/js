@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>장바구니 페이지</title>
+</head>
+
+ <script>
+  window.addEventListener("DOMContentLoaded", function() {
+    // 현재 URL의 매개변수 값 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const itemCount = urlParams.get('itemCount');
+
+    // 가져온 매개변수 값을 활용하여 원하는 동작 수행
+    if (itemCount) {
+      document.getElementById("item-count").textContent = itemCount;
+    }
+  });
+</script>
+</head>
+<body>
+  <h1>장바구니</h1>
+  
+  <p>장바구니 아이템 수: <span id="item-count">0</span></p>
+  
+</body>
+</html>

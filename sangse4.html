@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sangse2.css">
+    <link rel="stylesheet" href="sangse1.css"> 
+    <style>
+        .length {
+            display: flex;
+            align-items: center;
+        }
+
+        .length input[type="number"] {
+            margin-right: 10px;
+        }
+
+        .quantity-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-buttons a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .quantity-buttons a:hover {
+            background-color: #e0e0e0;
+        }
+
+        .quantity-buttons a:first-of-type {
+            border-radius: 5px 0 0 5px;
+        }
+
+        .quantity-buttons a:last-of-type {
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+    <title>쇼핑 상세보기</title>
+</head>
+<body>
+    <script>
+        // 세션 스토리지에서 상품 정보 가져오기
+        const productPrice = sessionStorage.getItem("productPrice");
+        const productName = sessionStorage.getItem("productName");
+        const productCode = sessionStorage.getItem("productCode");
+
+        // 상품 정보 동적으로 설정
+        const priceElement = document.querySelector(".price");
+        const productNameElement = document.querySelector("h2");
+        const productCodeElement = document.querySelector("td:nth-child(2)");
+
+        if (productPrice) {
+            priceElement.textContent = productPrice;
+        }
+
+        if (productName) {
+            productNameElement.textContent = productName;
+        }
+
+        if (productCode) {
+            productCodeElement.textContent = productCode;
+        }
+
+        // 수량 조정 버튼 클릭 이벤트 핸들러
+        const quantityInput = document.querySelector("input[type='number']");
+        const increaseButton = document.querySelector(".length .increase");
+        const decreaseButton = document.querySelector(".length .decrease");
+
+        increaseButton.addEventListener("click", () => {
+            const currentValue = parseInt(quantityInput.value);
+            if (!isNaN(currentValue)) {
+                quantityInput.value = currentValue + 1;
+            }
+        });
+
+        decreaseButton.addEventListener("click", () => {
+            const currentValue = parseInt(quantityInput.value);
+            if (!isNaN(currentValue) && currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+
+        // 수량 1 이하는 선택 불가능하도록 설정
+        quantityInput.addEventListener("input", () => {
+            const currentValue = parseInt(quantityInput.value);
+            if (!isNaN(currentValue) && currentValue < 1) {
+                quantityInput.value = 1;
+            }
+        });
+    </script>
+
+    <div class="product_view">
+        <h2>소니 스마트밴드 토크 SWR30</h2>
+        <table>
+            <caption>
+                <details class="hide">
+                    <summary>상품정보</summary>
+                    판매가, 상품코드, 옵션 및 결제금액 안내
+                </details>
+            </caption>
+            <colgroup>
+                <col style="width:173px;">
+                <col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>판매가</th>
+                    <td class="price">129,000</td>
+                </tr>
+                <tr>
+                    <th>상품코드</th>
+                    <td>C004843</td>
+                </tr>
+                <tr>
+                    <th>제조사/공급사</th>
+                    <td>CONY / 자강정보통신</td>
+                </tr>
+                <tr>
+                    <th>구매수량</th>
+                    <td>
+                        <div class="length">
+                            <input type="number" min="1" value="1">
+                            <div class="quantity-buttons">
+                                <a href="#a" class="increase">+</a>
+                                <a href="#a" class="decrease">-</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>사용가능쿠폰</th>
+                    <td>0개</td>
+                </tr>
+                <tr>
+                    <th>옵션선택</th>
+                    <td>
+                        <select>
+                            <option>기본(+0)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>배송비</th>
+                    <td>무료배송</td>
+                </tr>
+                <tr>
+                    <th>결제금액</th>
+                    <td class="total"><b>129,000</b>원</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="img">
+            <img src="111.png" alt="">
+            <ul>
+                <li class="on"><a href="#a"><img src="111.png" alt=""></a></li>
+                <li><a href="#a"><img src="111.png" alt=""></a></li>
+            </ul>
+        </div>
+        <div class="btns">
+            <a href="#a" class="btn1">장바구니</a>
+            <a href="#a" class="btn2">구매하기</a>
+        </div>
+    </div>
+</body>
+</html>

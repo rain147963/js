@@ -1,0 +1,215 @@
+<brand02>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css"> 
+        <title>PET BOUTIQUE</title>  
+    </head>
+    <style>
+    .main_img {                
+        background-image: url("mumu.png");
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat;
+    }
+
+    .content table {
+        margin: 0 auto;
+        width: 80%; 
+        text-align: center;
+    }
+
+    .content table img {
+        display: block;
+        margin: 0 auto; 
+        max-width: 100%; 
+        max-height: 100%; 
+    }    
+
+    .text1{
+        text-align: center;
+        font-size: 60px;
+        font-style: normal;
+        margin-top: 100px;  
+    }     
+
+    </style>
+    
+    <body>
+        <header>
+            <div class="header">
+                <shop class="navbar">
+                    <div class="shop__logo">
+                        <i class="fab fa-accusoft"></i>
+                        <i class="fa-solid fa-user"></i>
+                        <i class="shop__logo2"><a href="main.html"><img src="rogo2.png" width="75px"></a></i>                        
+                        <i class="shop_name"><a href="main.html">PET BOUTIQUE</a></i>
+                    </div>
+                  
+                    <ul class="navbar__menu">
+                        <li><a href="local_in.html">회원가입</a></li>
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="cart.html">장바구니</a></li>
+                        <li><a href="qna.html">Q & A</a></li>                                                         
+                    </ul>             
+                    
+            
+                    <a href="#" class="navbar__toggleBtn">
+                        <i class="fas fa-bars"></i>
+                    </a>            
+                </nav>
+             </div>
+            </header>       
+                <div class="main_img">   
+                  <div id="slideshow" >
+                    <img src="a1111.PNG" alt="Image 1">
+                    <img src="a2222.PNG" alt="Image 2">
+                    <img src="a3333.PNG" alt="Image 3">
+                    <div class="prevButton">&lt;</div>
+                    <div class="nextButton">&gt;</div>
+                  </div>
+                </div>     
+        
+        
+            <div class = "middlebar"> 
+                <nav class="middle__bar">          
+                    <ul class="middle__menu">
+                        <li><a href="brand01.html">사료</a></li>
+                        <li><a href="brand02.html">이동장</a></li>
+                        <li><a href="brand03.html">하우스</a></li>             
+                     </ul>
+                </nav>
+            </div>     
+    
+        <div class="content">
+            <div class="text1">BEST 이동장</div><br>
+            <table border="0">             
+                <tr>
+                    <td align="center">
+                        <a href="sangsepage.html" onclick="saveProductInfo('111.png', '소형 이동장', '9000', '111.png')">
+                            <img src="111.png">
+                        </a><br>
+                        소형 이동장<br>
+                        가격 9000 원<br>
+                    </td>
+                    <td align="center">
+                        <a href="sangsepage.html" onclick="saveProductInfo('rogo2.png', '중형 이동장', '10000', '222.png')">
+                            <img src="222.png" width="300" height="350">
+                        </a><br>
+                        중형 이동장<br>
+                        가격: 10000 원<br>
+                    </td>
+                    <td align="center">
+                        <a href="sangsepage.html" onclick="saveProductInfo('rogo2.png', '대형 이동장', '10000', '333.png')">
+                            <img src="333.png" width="300" height="350">
+                        </a><br>
+                        대형 이동장<br>
+                        가격: 10000 원<br>
+                    </td>
+                    <td align="center">
+                        <a href="sangsepage.html" onclick="saveProductInfo('rogo2.png', '유모차', '12000', '444.png')">
+                            <img src="444.png" width="300" height="350">
+                        </a><br>
+                        유모차<br>
+                        가격: 12000 원<br>
+                    </td>
+                </tr>
+            </table>
+            
+                     
+                <div class="endbar">
+                    <nav class="end__bar">
+                      <ul class="end__menu">
+                         <li>
+                            <div id='zz' class="zzfont">
+                            고객센터 <br>                        
+                            0507.1111.2345<br>  
+                            <img src="call.PNG" width="70"><br>               
+                            </div>
+                        </li>
+                        <li><br><img src="makde.png" width="3px"></li>
+                        <li>
+                        <div id='cc'>
+                            [운영시간]<br><br>
+                            평일 오전 10:00 ~ 오후 6:00<br><br>
+                            점심시간 오후 12:00 ~ 오후 1:00<br><br>
+                            토/일/공휴일 휴무<br>                    
+                        </div>
+                        </li>
+                        <li><br><img src="makde.png" width="3px"></li>
+                        <li>
+                        <div id='pp'>                            
+                            <br><a href="">NOTICE</a><br><br>
+                           <a href="">Q & A</a><br><br>
+                           <a href="">F A Q</a><br>
+                        </div>
+                        </li>
+                        <li><br><img src="makde.png" width="3px"></li>
+                        <li>
+                        <div id='hh'>                            
+                            <br>PET BOUTIQUE │대표 홍길동 │사업자등록번호 123-34-56789<br><br>
+                            주소 │경기도 화성시 병점 1로 1길 11-1(병점동)<br><br>
+                            통신판매업신고 2023-경기화성-0718<br>
+                        </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    
+     <script>
+      
+    
+        const toggleBtn = document.querySelector(".navbar__toggleBtn");
+        const menu = document.querySelector(".navbar__menu");
+        const icons = document.querySelector(".navbar__icons");
+    
+        toggleBtn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+        icons.classList.toggle("active");
+        });
+        // main_img 슬라이드 js
+        var slideshow = document.getElementById('slideshow');
+        var images = slideshow.getElementsByTagName('img');
+        var prevButton = slideshow.querySelector('.prevButton');
+        var nextButton = slideshow.querySelector('.nextButton');
+        var currentIndex = 0;
+               showImage(currentIndex);
+        function nextImage() {
+            currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            showImage(currentIndex);
+        }
+       
+        function prevImage() {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+            showImage(currentIndex);
+        }      
+        function showImage(index) {
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.opacity = '0';
+            }
+                images[index].style.opacity = '1';
+        }
+        setInterval(nextImage, 3000);
+        nextButton.addEventListener('click', nextImage);
+        prevButton.addEventListener('click', prevImage);
+    
+        //세션 저장
+        function saveProductInfo(sangseimgUrl, productName, price, imageUrl) {
+            sessionStorage.setItem('sangseimgUrl', sangseimgUrl);
+            sessionStorage.setItem('productName', productName);
+            sessionStorage.setItem('price', price);
+            sessionStorage.setItem('imageUrl', imageUrl);
+         }
+    
+        </script>
+        
+    </body>
+    </html>

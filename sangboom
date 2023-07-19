@@ -1,0 +1,14 @@
+
+id: saru1
+name: 사료1
+제품설명:이미지
+price: 25,000
+제품 카테고리: 사료
+imge url: ccafu.png
+
+id: saru2
+name: 사료2
+제품설명:이미지
+price: 28,000
+제품 카테고리: 사료
+imge url: ccara.png

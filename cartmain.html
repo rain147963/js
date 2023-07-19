@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+</head>
+<style>
+    :root {
+        --text-color: #013c4b;
+        --background-color: #e6b8d6;
+        --accent-color: #d49466;
+    }
+
+    body {
+        background-color: #eff1f3;
+        margin: 0;
+        font-family: "Source Sans Pro";
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--text-color);
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--background-color);
+        padding: 10px 12px;
+    }
+
+    .shop__logo {
+        font-size: 50px;
+        margin-left: 20px;
+        color: var(--text-color);
+    }
+
+    .shop_name {
+        line-height: 1.5;
+    }
+
+    .navbar__logo i {
+        color: var(--accent-color);
+    }
+
+    .navbar__menu {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .navbar__menu li {
+        padding: 8px 12px;
+    }
+
+    .navbar__menu li:hover {
+        background-color: var(--accent-color);
+        border-radius: 4px;
+    }
+
+    .navbar__icons {
+        list-style: none;
+        color: var(--text-color);
+        display: flex;
+        padding-left: 0;
+    }
+
+    .navbar__icons li {
+        padding: 8px 12px;
+    }
+
+    .navbar__toggleBtn {
+        display: none;
+        position: absolute;
+        right: 32px;
+        font-size: 24px;
+        color: var(--accent-color);
+    }
+</style>
+
+<body>
+    <header>
+        <div class="header">
+            <shop class="navbar">
+                <div class="shop__logo">
+                    <i class="fab fa-accusoft"></i>
+                    <i class="fa-solid fa-user"></i>
+                    <i class="shop__logo2"><a href="main2.html"><img src="rogo2.png" width="75px"></a></i>
+                    <i class="shop_name"><a href="main2.html">PET BOUTIQUE</a></i>
+                </div>
+
+                <ul class="navbar__menu">
+                    <li><a href="">회원가입</a></li>
+                    <li><a href="">로그인</a></li>
+                    <li><a href="cartmain.html">장바구니</a></li>
+                    <li><a href="">고객센터</a></li>
+                </ul>
+                <a href="#" class="navbar__toggleBtn">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <h1>장바구니</h1>
+    <div id="cartItems"></div>
+    <p>총 금액: <span id="totalPrice"></span> 원</p>
+    <button onclick="clearCart()">초기화</button>
+    <button onclick="purchaseItems()">구매하기</button>
+
+    <script>
+        // 장바구니 아이템 가져오기
+        var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // 장바구니 아이템 표시
+        function displayCartItems() {
+            var cartItemsDiv = document.getElementById('cartItems');
+            var totalPriceElement = document.getElementById('totalPrice');
+            
+
+            // 총 금액 계산
+            var totalPrice = 0;
+
+            // 각 아이템에 대해 HTML 생성
+            cartItems.forEach(function (item) {
+                var itemDiv = document.createElement('div');
+                itemDiv.style.display = 'flex';
+                itemDiv.style.alignItems = 'center';
+                itemDiv.style.marginBottom = '10px';
+
+                var itemCheckbox = document.createElement('input');
+                itemCheckbox.type = 'checkbox';
+                itemCheckbox.className = 'itemCheckbox';
+                itemCheckbox.value = item.productCode;
+                itemDiv.appendChild(itemCheckbox);
+
+                var itemImage = document.createElement('img');
+                itemImage.src = item.imageUrl;
+                itemImage.alt = 'Product Image';
+                itemImage.width = '50';
+                itemImage.style.marginRight = '10px';
+                itemDiv.appendChild(itemImage);
+
+                var itemInfoDiv = document.createElement('div');
+                itemDiv.appendChild(itemInfoDiv);
+
+                var itemName = document.createElement('p');
+                itemName.textContent = '상품명: ' + item.productName;
+                itemInfoDiv.appendChild(itemName);
+
+                var itemPrice = document.createElement('p');
+                itemPrice.textContent = '가격: ' + item.price + ' 원';
+                itemInfoDiv.appendChild(itemPrice);
+
+                cartItemsDiv.appendChild(itemDiv);
+
+                var itemTotal = parseInt(item.price) * item.quantity;
+                totalPrice += itemTotal;
+            });
+
+            // 총 금액 표시
+            totalPriceElement.textContent = totalPrice;
+        }
+
+        // 장바구니 아이템 표시 호출
+        displayCartItems();
+
+        // 상품을 장바구니에 추가
+        function addToCart(productCode, productName, price) {
+            var existingItem = cartItems.find(function (item) {
+                return item.productCode === productCode;
+            });
+
+            if (existingItem) {
+                existingItem.quantity += 1; // 이미 있는 상품인 경우 수량 증가
+            } else {
+                var newItem = {
+                    productCode: productCode,
+                    productName: productName,
+                    price: price,
+                    imageUrl: imageUrl,
+                    quantity: 1
+                };
+
+                cartItems.push(newItem); // 새로운 상품인 경우 장바구니에 추가
+            }
+
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            displayCartItems();
+        }
+
+        // 초기화 버튼 클릭 시 장바구니 초기화
+        function clearCart() {
+            localStorage.removeItem('cartItems');
+            cartItems = []; // cartItems 배열도 초기화
+            displayCartItems();
+        }
+
+        // 구매하기 버튼 클릭 시 선택된 상품만 구매
+        function purchaseItems() {
+            var checkboxes = document.getElementsByClassName('itemCheckbox');
+            var selectedItems = [];
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    var productCode = checkboxes[i].value;
+                    var selectedItem = cartItems.find(function (item) {
+                        return item.productCode === productCode;
+                    });
+                    selectedItems.push(selectedItem);
+                }
+            }
+
+            // 선택된 상품에 대한 처리 (예: 서버로 전송 등)
+            console.log('선택된 상품:', selectedItems);
+        }
+    </script>
+</body>
+
+</html>

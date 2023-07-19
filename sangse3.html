@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {
+        --text-color: #013c4b;
+        --background-color: #ecb6d7;
+        --accent-color: #d49466;
+    }
+    body {
+        background-color: #eff1f3;
+        margin: 0;
+        font-family: "Source Sans Pro";
+    }
+    a {
+        text-decoration: none;
+        color: var(--text-color);
+    }
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--background-color);
+        padding: 10px 12px;
+    }
+
+    .shop__logo {
+        font-size: 50px;
+        color: var(--text-color);
+    }
+
+    .navbar__logo i {
+        color: var(--accent-color);
+    }
+
+    .navbar__menu {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .navbar__menu li {
+        padding: 8px 12px;
+    }
+
+    .navbar__menu li:hover {
+        background-color: var(--accent-color);
+        border-radius: 4px;
+    }
+
+    .navbar__icons {
+        list-style: none;
+        color: var(--text-color);
+        display: flex;
+        padding-left: 0;
+    }
+
+    .navbar__icons li {
+        padding: 8px 12px;
+    }
+
+    .navbar__toggleBtn {
+        display: none;
+        position: absolute;
+        right: 32px;
+        font-size: 24px;
+        color: var(--accent-color);
+    }
+
+    .menul12 {
+        text-align: center;
+        height: 500px;
+    }
+
+    .menul13 {
+        height: 50px;
+        width: 300px;
+    }
+    .segsepage1{
+        height: 1500px;
+        width: 300px;
+    }
+    
+    .content1 {
+        margin-top: 150px;
+        padding: 20px;
+    }
+    
+    .content1 table {
+        margin: 0 auto;
+        width: 80%; 
+    }
+
+    .content1 table img {
+        display: block;
+        margin: 0 auto; 
+        max-width: 100%; 
+        max-height: 100%; 
+    }
+    .content2 {
+        margin-top: 0px;
+        padding: 20px;
+    }
+    
+    .content2 table {
+        margin: 0 auto;
+        width: 80%; 
+    }
+
+    .content2 table img {
+        display: block;
+        margin: 0 auto; 
+        max-width: 100%; 
+        max-height: 100%; 
+    }
+
+</style>
+<body>
+    <h1>Sange1</h1>
+
+    <div class="content1">
+        <table class="table align-middle" border="1">
+            <tr>
+                <td rowspan="5" class="menul12">
+                    <img src="" id="photo_sange1" alt="Product Image">
+                </td>
+                <td style="text-align: center" colspan="2" class="menul13" id="product-name"></td>
+            </tr>
+            <tr>
+                <td class="menul13"></td>
+                <td class="menul13"></td>
+            </tr>
+            <td class="menul13"></td>
+            <td class="menul13" id="product-price"></td>
+
+            <tr>
+                <td class="menul13">수량</td>
+                <td class="menul13">총 상품 금액</td>
+            </tr>
+            <tr>
+                <td align="center"><button id="btn_set_clear" onclick="addToCart()">장바구니</button></td>
+                <td align="center"><button id="btn_set_clear" onclick="buyNow()">바로구매</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+    function addToCart() {
+    // URL 매개변수에서 상품 정보 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const productName = urlParams.get('productName');
+    const productImage = urlParams.get('productImage');
+    const productPrice = urlParams.get('productPrice');
+  
+    // 장바구니 처리 로직
+    var itemCount = parseInt(document.getElementById("item-count").textContent);
+    localStorage.setItem("cartItemCount", itemCount + 1);
+    alert("장바구니에 상품을 추가하였습니다.");
+}
+
+    function buyNow() {
+    // URL 매개변수에서 상품 정보 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const productName = urlParams.get('productName');
+  
+    // 바로 구매 처리 로직
+    alert(productName + " 상품을 바로 구매합니다.");
+}
+
+    </script>
+</body>
+</html>

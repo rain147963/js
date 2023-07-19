@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>쇼핑몰 장바구니</title>
+  <!DOCTYPE html>
+<html>
+<head>
+  <script>
+    // 장바구니에 상품 추가
+    function addToCart(item) {
+      // 상품 정보 받기
+      var quantity = prompt("상품 수량을 입력하세요:");
+      if (quantity !== null && quantity !== "") {
+        var product = item + " (수량: " + quantity + ")";
+        
+        // 장바구니에 상품 정보 추가
+        var cartItem = document.createElement("li");
+        cartItem.textContent = product;
+        document.getElementById("cart").appendChild(cartItem);
+        
+        // 장바구니 아이템 수 업데이트
+        var itemCount = document.getElementById("item-count");
+        itemCount.textContent = parseInt(itemCount.textContent) + 1;
+      }
+    }
+    
+    // 바로 구매
+    function buyNow(item) {
+      alert(item + " 상품을 바로 구매합니다.");
+    }
+    
+    // 장바구니 비우기
+    function clearCart() {
+      // 장바구니 아이템 삭제
+      var cart = document.getElementById("cart");
+      while (cart.firstChild) {
+        cart.removeChild(cart.firstChild);
+      }
+      
+      // 장바구니 아이템 수 초기화
+      var itemCount = document.getElementById("item-count");
+      itemCount.textContent = "0";
+    }
+  </script>
+</head>
+<body>
+  <h1>쇼핑몰 장바구니</h1>
+  
+  <button onclick="addToCart('상품 1')">상품 1 장바구니에 추가</button>
+  <button onclick="addToCart('상품 2')">상품 2 장바구니에 추가</button>
+  <button onclick="clearCart()">장바구니 비우기</button>
+  
+  <h2>장바구니</h2>
+  <ul id="cart"></ul>
+  
+  <p>장바구니 아이템 수: <span id="item-count">0</span></p>
+  
+  <button onclick="buyNow('상품 1')">상품 1 바로 구매</button>
+  <button onclick="buyNow('상품 2')">상품 2 바로 구매</button>
+</body>
+</html>

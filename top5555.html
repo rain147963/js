@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shop1.css">
+    <title>Document</title>
+</head>
+<style>
+    .end__menu {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .end__menu iframe {
+        flex: 1;
+        margin-right: 10px;
+        width: 400px;
+    }
+
+    .end__menu iframe:last-child {
+        margin-right: 0;
+    }
+</style>
+<body>     
+    <body>     
+        <body>     
+            <div class="endbar">
+                <nav class="end__bar">
+                    <ul class="end__menu">
+                        <li>
+                            <iframe id='cc' src="customer_center.html"></iframe>
+                        </li>
+                        <li>
+                            <iframe id='pp' src="customer_center.html"></iframe>
+                        </li>
+                        <li>
+                            <iframe id='hh' src="customer_center.html"></iframe>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                // customer_center.html의 특정 <div> 내용 추출 및 표시
+                var ccIframe = document.getElementById('cc');
+                ccIframe.onload = function() {
+                    var customerCenterContent = ccIframe.contentDocument.querySelector('.customer');
+                    if (customerCenterContent) {
+                        var customerCenterDiv = document.getElementById('customerCenterContent');
+                        customerCenterDiv.innerHTML = customerCenterContent.innerHTML;
+                        customerCenterDiv.id = 'cust'; // Remove id to prevent duplicate IDs
+                    }
+                };
+        
+                var ppIframe = document.getElementById('pp');
+                ppIframe.onload = function() {
+                    var playpenContent = ppIframe.contentDocument.querySelector('.playpen');
+                    if (playpenContent) {
+                        var playpenDiv = document.getElementById('playpenContent');
+                        playpenDiv.innerHTML = playpenContent.innerHTML;
+                        playpenDiv.id = 'pla'; // Remove id to prevent duplicate IDs
+                    }
+                };
+        
+                var hhIframe = document.getElementById('hh');
+                hhIframe.onload = function() {
+                    var houseContent = hhIframe.contentDocument.querySelector('.house');
+                    if (houseContent) {
+                        var houseDiv = document.getElementById('houseContent');
+                        houseDiv.innerHTML = houseContent.innerHTML;
+                        houseDiv.id = 'hou'; // Remove id to prevent duplicate IDs
+                    }
+                };
+            </script>
+        </body>
+        
+</body>
+</html>

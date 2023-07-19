@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css"> 
+    <title>Document</title>
+</head>
+<style>
+  .main_img {                
+        background-image: url("mumu.png");
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat;
+    }
+
+  .content table {
+          margin: 0 auto;
+          width: 80%; 
+          text-align: center;
+      }
+
+  .content table img {
+          display: block;
+          margin: 0 auto; 
+          max-width: 100%; 
+          max-height: 100%; 
+      }    
+
+  .text1{
+      text-align: center;
+      font-size: 60px;
+      font-style: normal;
+      margin-top: 100px;  
+  }  
+    * {
+  box-sizing: border-box;
+    }
+
+    body {
+    font-family: 'Muli', sans-serif;
+    background-color: #f0f0f0;
+    }
+
+    h1 {
+    margin: 50px 0 30px;
+    text-align: center;
+    }
+
+    .faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+    }
+    .blank {
+   
+    height: 200px;
+    
+    }
+
+    .faq {
+    background-color: transparent;
+    border: 1px solid #9fa4a8;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+    }
+
+    .faq.active {
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq.active::before, .faq.active::after {
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    color: #2ecc71;
+    font-size: 7rem;
+    position: absolute;
+    opacity: 0.2;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+    }
+
+    .faq.active::before {
+    color: #3498db;
+    top: -10px;
+    left: -30px;
+    transform: rotateY(180deg);
+    }
+
+    .faq-title {
+    margin: 0 35px 0 0;
+    }
+
+    .faq-text {
+    display: none;
+    margin: 30px 0 0;
+    }
+
+    .faq.active .faq-text {
+    display: block;
+    }
+
+    .faq-toggle {
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+    }
+
+    .faq-toggle:focus {
+    outline: 0;
+    }
+
+    .faq-toggle .fa-times {
+    display: none;
+    }
+
+    .faq.active .faq-toggle .fa-times {
+    color: #fff;
+    display: block;
+    }
+
+    .faq.active .faq-toggle .fa-chevron-down {
+    display: none;
+    
+    }
+
+    .faq.active .faq-toggle {
+    background-color: red;
+    }
+</style>
+<body>
+  <header>
+    <div class="header">
+        <shop class="navbar">
+            <div class="shop__logo">
+                <i class="fab fa-accusoft"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="shop__logo2"><a href="main.html"><img src="rogo2.png" width="75px"></a></i>                        
+                <i class="shop_name"><a href="main.html">PET BOUTIQUE</a></i>
+            </div>
+          
+            <ul class="navbar__menu">
+                <li><a href="local_in.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="cart.html">장바구니</a></li>
+                <li><a href="qna.html">Q & A</a></li>                                                         
+            </ul>          
+            
+    
+            <a href="#" class="navbar__toggleBtn">
+                <i class="fas fa-bars"></i>
+            </a>            
+        </nav>
+     </div>
+    </header> 
+
+    <section>
+    <div class = blank> </div>  
+    <h1>그만 질문하세요</h1>
+    <div class="faq-container">
+      <div class="faq">
+        <h3 class="faq-title">배송은?</h3>
+
+        <p class="faq-text">몰루?</p>
+
+        <button class="faq-toggle">☆
+          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="faq">
+        <h3 class="faq-title">자주 묻는 질문 2</h3>
+
+        <p class="faq-text">대답 2</p>
+
+        <button class="faq-toggle">zz
+          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="faq">
+        <h3 class="faq-title">자주 묻는 질문 3</h3>
+
+        <p class="faq-text">대답 3</p>
+
+        <button class="faq-toggle">zz
+          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="faq">
+        <h3 class="faq-title">자주 묻는 질문 4</h3>
+
+        <p class="faq-text">대답 4</p>
+
+        <button class="faq-toggle">zz
+          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+ 
+    
+</body>
+
+<script>
+    const toggles = document.querySelectorAll(".faq-toggle");
+
+    toggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+    toggle.parentNode.classList.toggle("active");
+     });
+    });
+
+    
+</script>
+<div class="endbar">
+  <nav class="end__bar">
+    <ul class="end__menu">
+       <li>
+          <div id='zz' class="zzfont">
+          고객센터 <br>                        
+          0507.1111.2345<br>  
+          <img src="call.PNG" width="70"><br>               
+          </div>
+      </li>
+      <li><br><img src="makde.png" width="3px"></li>
+      <li>
+      <div id='cc'>
+          [운영시간]<br><br>
+          평일 오전 10:00 ~ 오후 6:00<br><br>
+          점심시간 오후 12:00 ~ 오후 1:00<br><br>
+          토/일/공휴일 휴무<br>                    
+      </div>
+      </li>
+      <li><br><img src="makde.png" width="3px"></li>
+      <li>
+      <div id='pp'>                            
+          <br><a href="">NOTICE</a><br><br>
+         <a href="qna.html">Q & A</a><br><br>
+         <a href="">F A Q</a><br>
+      </div>
+      </li>
+      <li><br><img src="makde.png" width="3px"></li>
+      <li>
+      <div id='hh'>                            
+          <br>PET BOUTIQUE │대표 홍길동 │사업자등록번호 123-34-56789<br><br>
+          주소 │경기도 화성시 병점 1로 1길 11-1(병점동)<br><br>
+          통신판매업신고 2023-경기화성-0718<br>
+      </div>
+      </li>
+  </ul>
+</nav>
+</div>
+</html>

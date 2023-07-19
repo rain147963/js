@@ -1,0 +1,375 @@
+<상세페이지>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PET BOUTIQUE</title>
+    <link rel="stylesheet">
+</head>
+<style>
+    :root {
+        --text-color: #013c4b;
+        --background-color: #e6b8d6;
+        --accent-color: #d49466;
+    }
+
+    body {
+        background-color: #eff1f3;
+        margin: 0;
+        font-family: "Source Sans Pro", sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--text-color);
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--background-color);
+        padding: 10px 12px;
+    }
+
+    .shop__logo {
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        color: var(--text-color);
+    }
+
+    .shop__logo i {
+        margin-right: 5px;
+    }
+
+    .shop__logo a {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar__menu {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .navbar__menu li {
+        padding: 8px 12px;
+    }
+
+    .navbar__menu li:hover {
+        background-color: var(--accent-color);
+        border-radius: 4px;
+    }
+
+    .navbar__icons {
+        list-style: none;
+        color: var(--text-color);
+        display: flex;
+        padding-left: 0;
+    }
+
+    .navbar__icons li {
+        padding: 8px 12px;
+    }
+
+    .navbar__toggleBtn {
+        display: none;
+        position: absolute;
+        right: 32px;
+        font-size: 24px;
+        color: var(--accent-color);
+    }
+
+    #productInfo {
+        max-width: 500px;
+        margin: 100px auto;
+        text-align: center;
+    }
+
+    #productImage {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #cart {
+        max-width: 500px;
+        margin: 50px auto;
+        text-align: center;
+    }
+
+    #cart input[type="number"] {
+        width: 50px;
+        padding: 5px;
+        text-align: center;
+        margin-right: 10px;
+    }
+
+    #cart button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    #cart button:hover {
+    background-color: var(--accent-color);
+    color: white;
+    }
+
+    #cart p {
+        margin-top: 30px;
+    }
+
+    #cart p span {
+        font-weight: bold;
+    }
+
+    #detailedDescription {
+        max-width: 800px;
+        margin: 50px auto;
+        text-align: center;
+    }
+
+    #detailedDescription img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #detailedDescription p {
+        line-height: 1.5;
+    }
+
+.endbar {
+  background-color: rgba(212, 208, 208, 0.96);
+  padding: 5px 5px;
+  margin-top: 500px;
+}
+.end__menu {
+  text-align: center;
+}
+
+.end__menu li {
+  display: inline-block;
+  padding: 5px 5px;
+  margin-right: 70px;
+  vertical-align: top;
+}  
+.cart_count {
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.cart_count:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(212, 148, 102, 0.3);
+}
+</style>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="shop__logo">
+                <i class="fab fa-accusoft"></i>
+                <a href="main2.html">
+                    <img src="rogo2.png" width="75px" alt="Logo">
+                </a>
+                <a href="main2.html">PET BOUTIQUE</a>
+            </div>
+
+            <ul class="navbar__menu">
+                <li><a href="">회원가입</a></li>
+                <li><a href="">로그인</a></li>
+                <li><a href="cart.html">장바구니</a></li>
+                <li><a href="">고객센터</a></li>
+            </ul>
+
+            <a href="#" class="navbar__toggleBtn">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+    </header>
+
+    <div id="productInfo">
+        <h2>상품 정보</h2>
+        <img id="productImage" src="" alt="Product Image">
+        <p id="productsangseimg"></p>
+        <p id="productName"></p>
+        <p id="price"></p>
+    </div>
+
+    <div id="detailedDescription">
+        <h2>상세 설명</h2>
+        <img id="productImage2" src="" alt="Product Image">
+        <p>이 강아지용품은 특히 개에게 편안함을 제공하는 용품입니다.
+            제품 구입 구매후 판매자에게 문의부탁드립니다.</p>
+    </div>
+  
+
+    <div id="cart">
+        <h2>장바구니</h2>
+        <input type="number" class="cart_count" id="quantity" value="1" min="1" step="1">
+        <button onclick="addToCart()">장바구니에 추가</button>
+        <button onclick="buyNow()">바로 구매하기</button>
+        <p>수량: <span id="displayQuantity">1</span></p>
+        <p>총 금액: <span id="totalPrice"></span> 원</p>
+    </div>
+
+    <div class="endbar">
+        <nav class="end__bar">
+          <ul class="end__menu">
+             <li>
+                <div id='zz' class="zzfont">
+                고객센터 <br>                        
+                0507.1111.2345<br>  
+                <img src="call.PNG" width="70"><br>               
+                </div>
+            </li>
+            <li><br><img src="makde.png" width="3px"></li>
+            <li>
+            <div id='cc'>
+                [운영시간]<br><br>
+                평일 오전 10:00 ~ 오후 6:00<br><br>
+                점심시간 오후 12:00 ~ 오후 1:00<br><br>
+                토/일/공휴일 휴무<br>                    
+            </div>
+            </li>
+            <li><br><img src="makde.png" width="3px"></li>
+            <li>
+            <div id='pp'>                            
+                <br><a href="">NOTICE</a><br><br>
+               <a href="">Q & A</a><br><br>
+               <a href="">F A Q</a><br>
+            </div>
+            </li>
+            <li><br><img src="makde.png" width="3px"></li>
+            <li>
+            <div id='hh'>                            
+                <br>PET BOUTIQUE │대표 홍길동 │사업자등록번호 123-34-56789<br><br>
+                주소 │경기도 화성시 병점 1로 1길 11-1(병점동)<br><br>
+                통신판매업신고 2023-경기화성-0718<br>
+            </div>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+    <script>
+       // 세션 저장소에서 상품 정보 가져오기
+    var sangseimgUrl = sessionStorage.getItem('sangseimgUrl');
+    var productName = sessionStorage.getItem('productName');
+    var price = sessionStorage.getItem('price');
+    var imageUrl = sessionStorage.getItem('imageUrl');
+
+    // 상품 정보를 화면에 표시하는 함수
+    function displayProductInfo() {
+        var productImage = document.getElementById('productImage');        
+        var productNameElement = document.getElementById('productName');
+        var priceElement = document.getElementById('price');
+        var productImage2 = document.getElementById('productImage2');
+
+        // 이미지 URL, 상품 코드, 상품명, 가격을 화면 요소에 설정
+        productImage.src = imageUrl;        
+        productNameElement.textContent = '상품명: ' + productName;
+        priceElement.textContent = '가격: ' + price + ' 원';
+        productImage2.src= sangseimgUrl;
+    }
+
+        // 페이지 로드 시 상품 정보 표시 함수 호출
+        displayProductInfo();
+
+        // 세션 스토리지에서 장바구니 정보 가져오기
+        var cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+
+        // 장바구니에 상품 추가
+        function addToCart() {
+            var quantityInput = document.getElementById('quantity');
+            var quantity = parseInt(quantityInput.value);
+
+            // 장바구니에 추가할 상품 정보 및 수량 저장
+            var cartItem = {
+                productName: productName,
+                price: price,
+                quantity: quantity
+            };
+
+            // 세션 스토리지에 저장
+            cartItems.push(cartItem);
+            sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // 수량과 총 금액 표시 업데이트
+            updateCartDisplay();
+        }
+
+        // 바로 구매하기
+        function buyNow() {
+            var quantityInput = document.getElementById('quantity');
+            var quantity = parseInt(quantityInput.value);
+
+            // 장바구니에 추가할 상품 정보 및 수량 저장
+            var cartItem = {
+                productName: productName,
+                price: price,
+                quantity: quantity
+            };
+
+            // 장바구니에 저장
+            var cartItems = [cartItem];
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // 이동할 페이지로 리다이렉트
+            window.location.href = 'cart.html';
+        }
+
+        // 수량 변경 시 총 금액 업데이트
+        function updateCartDisplay() {
+            var quantityInput = document.getElementById('quantity');
+            var quantity = parseInt(quantityInput.value);
+
+            var totalPrice = parseInt(price) * quantity;
+
+            var displayQuantity = document.getElementById('displayQuantity');
+            var totalPriceElement = document.getElementById('totalPrice');
+
+            displayQuantity.textContent = quantity;
+            totalPriceElement.textContent = totalPrice;
+        }
+
+        // 수량 변경 이벤트 리스너
+        var quantityInput = document.getElementById('quantity');
+        quantityInput.addEventListener('change', updateCartDisplay);
+
+        // 페이지 로드 시 수량 및 총 금액 표시 업데이트
+        updateCartDisplay();
+        function saveProductInfo(productCode, productName, price, imageUrl) {
+        sessionStorage.setItem('price', price);
+        sessionStorage.setItem('productName', productName);
+        sessionStorage.setItem('imageUrl', imageUrl);
+       }
+
+        
+    </script>
+</body>
+</html>
